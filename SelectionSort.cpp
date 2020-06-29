@@ -1,19 +1,25 @@
 #include <iostream>
 using namespace std;
 
-void swap(int *a, int *b)
+void SelectionSort(int arr[], int n);
+void printarray(int arr[], int n);
+
+
+int main()
 {
-	int temp ;
-	if (a != b)
+	int n ;
+	cout << "Enter the number of elements of your array: " << endl;
+	cin >> n ;
+	int arr[n] ;
+	
+	for (int i = 0; i < n; i++)
 	{
-		temp = *a;
-		*a = *b;
-		*b = temp;
+		arr[i] = 1 + rand() % n ;
 	}
-	else
-	{
-		return ;
-	}
+	
+	SelectionSort(arr, n);
+	printarray(arr, n);
+	return 0;
 }
 
 void SelectionSort(int arr[], int n)
@@ -41,21 +47,4 @@ void printarray(int arr[], int n)
 		cout << arr[i] << ' ' ;
 	}
 	cout << endl;
-}
-
-int main()
-{
-	int n ;
-	cout << "Enter the number of elements of your array: " << endl;
-	cin >> n ;
-	int arr[n] ;
-	
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = 1 + rand() % n ;
-	}
-	
-	SelectionSort(arr, n);
-	printarray(arr, n);
-	return 0;
 }
