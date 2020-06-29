@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// function prototypes
 void SelectionSort(int arr[], int n);
 void printarray(int arr[], int n);
 
@@ -8,20 +9,26 @@ void printarray(int arr[], int n);
 int main()
 {
 	int n ;
-	cout << "Enter the number of elements of your array: " << endl;
+	cout << "Enter the Number of Elements of Your Array: " << endl;
 	cin >> n ;
 	int arr[n] ;
 	
+	// generates a random array
 	for (int i = 0; i < n; i++)
 	{
 		arr[i] = 1 + rand() % n ;
+		cout << arr[i] << ' ' ;
 	}
+	cout << endl;
 	
 	SelectionSort(arr, n);
 	printarray(arr, n);
+	
+	cout << endl;
 	return 0;
 }
 
+// implementation of selection sort
 void SelectionSort(int arr[], int n)
 {
 	int i, j, min;
@@ -36,15 +43,15 @@ void SelectionSort(int arr[], int n)
 				min = j ;
 			}
 		}
-		swap(&arr[min], &arr[i]);
+		swap(arr[min], arr[i]);
 	}
 }
 
+// print the sorted array
 void printarray(int arr[], int n)
 {
 	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << ' ' ;
 	}
-	cout << endl;
 }
