@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <cstdio>
 using namespace std;
 
 // function prototypes
@@ -12,11 +13,11 @@ int main()
 	int n;
 	cout << "The number of elements you want to Sort: ";
 	cin >> n ;
-	int arr[n];
+	int *arr = (int *) malloc(sizeof(int)*n);
 	random_array(arr,n);
 	int count = 0;
 	
-	BubbleSort(arr,n,&count);
+	BubbleSort(arr,n);
 	printArray(arr,n);
 	cout << endl;
 	return 0;
